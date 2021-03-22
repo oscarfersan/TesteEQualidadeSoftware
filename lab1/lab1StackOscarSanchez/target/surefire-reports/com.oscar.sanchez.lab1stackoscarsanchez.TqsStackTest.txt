@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.oscar.sanchez.lab1stackoscarsanchez.TqsStackTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.053 s <<< FAILURE! - in com.oscar.sanchez.lab1stackoscarsanchez.TqsStackTest
+peekOnNonEmptyStack  Time elapsed: 0.031 s  <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+stack (1 failure)
+	org.opentest4j.AssertionFailedError: Stack should not be empty ==> expected: not <null>
+	at com.oscar.sanchez.lab1stackoscarsanchez.TqsStackTest.peekOnNonEmptyStack(TqsStackTest.java:66)
+
+popOnNonEmptyStack  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Stack should not be empty ==> expected: not <null>
+	at com.oscar.sanchez.lab1stackoscarsanchez.TqsStackTest.popOnNonEmptyStack(TqsStackTest.java:55)
+
+isEmpty  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Stack should be empty ==> expected: <true> but was: <false>
+	at com.oscar.sanchez.lab1stackoscarsanchez.TqsStackTest.isEmpty(TqsStackTest.java:44)
+
