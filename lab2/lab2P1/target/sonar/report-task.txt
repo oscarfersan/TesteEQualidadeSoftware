@@ -1,0 +1,6 @@
+projectKey=org.oscar.sanchez:lab2P1
+serverUrl=http://localhost:9000
+serverVersion=8.8.0.42792
+dashboardUrl=http://localhost:9000/dashboard?id=org.oscar.sanchez%3Alab2P1
+ceTaskId=AXkSqIn2Z5yfXjsVkO1-
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXkSqIn2Z5yfXjsVkO1-
