@@ -26,6 +26,10 @@ public class GenericCache <K,V> implements IGenericCache<K,V>{
         this.clear();
     }
 
+    public int size(){
+        return cacheMap.size();
+    }
+
     @Override
     public void clean() {
         LOGGER.info("Cleaning cache");
@@ -52,11 +56,13 @@ public class GenericCache <K,V> implements IGenericCache<K,V>{
 
     @Override
     public void clear() {
+        LOGGER.info("Restoring cache to default");
         this.cacheMap = new HashMap<>();
     }
 
     @Override
     public Optional<V> get(K key) {
+        LOGGER.info("Getting value");
         this.clean();
         return Optional.ofNullable(this.cacheMap.get(key)).map(CacheValue::getValue);
     }

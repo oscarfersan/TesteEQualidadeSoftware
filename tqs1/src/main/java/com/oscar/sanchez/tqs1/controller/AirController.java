@@ -40,7 +40,7 @@ public class AirController {
         //https://docs.openaq.org/#/
         String city = request.getParameter("city");
         City cityParam = new City();
-        if (this.cache.containsKey(city)) {
+        if (this.cache.get(city).isPresent() && !this.cache.get(city).isEmpty() ) {
             City aux = this.cache.get(city).get();
             cityParam = aux;
         } else {
