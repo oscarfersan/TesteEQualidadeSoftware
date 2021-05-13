@@ -3,6 +3,7 @@ package com.oscar.sanchez.tqs1.controller;
 import com.oscar.sanchez.tqs1.classes.City;
 import com.oscar.sanchez.tqs1.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,6 +49,18 @@ public class CityController {
     public ResponseEntity<List<City>> getCitiesByCountry(@PathVariable("country") String country){
         try{
             List<City> cities = cityRepository.findByCountry(country);
+            if (cities.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(cities, HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/city/ranking")
+    public ResponseEntity<List<City>> getCityRanking(){
+        try{
+            List<City> cities = cityRepository.findAll(Sort.by(Sort.Direction.DESC,"value"));
             if (cities.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }

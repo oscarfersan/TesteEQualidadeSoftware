@@ -9,25 +9,35 @@ import javax.persistence.Table;
 @Table(name = "City")
 public class City {
     @Id
-    @Column(name="locationId")
+    @Column(name = "locationId")
     private String locationId;
     @Column(name = "name")
     private String name;
-    @Column(name="country")
+    @Column(name = "country")
     private String country;
-    @Column(name="latitude")
+    @Column(name = "latitude")
     private float latitude;
-    @Column(name="longitude")
+    @Column(name = "longitude")
     private float longitude;
-    @Column(name="value")
+    @Column(name = "value")
     private float value;
-    @Column(name="location")
+    @Column(name = "location")
     private String location;
+    @Column(name = "date")
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public City() {
     }
 
-    public City(String locationId, String name, String country, float latitude, float longitude, float value, String location) {
+    public City(String locationId, String name, String country, float latitude, float longitude, float value, String location, String date) {
         this.locationId = locationId;
         this.name = name;
         this.country = country;
@@ -35,18 +45,20 @@ public class City {
         this.longitude = longitude;
         this.value = value;
         this.location = location;
+        this.date = date;
     }
 
     @Override
     public String toString() {
         return "City{" +
-                "location='" + location + '\'' +
+                "locationId='" + locationId + '\'' +
                 ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
-                ", value=" + value +" µg/m³"+
-                ", locationId='" + locationId + '\'' +
+                ", value=" + value +
+                ", location='" + location + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 

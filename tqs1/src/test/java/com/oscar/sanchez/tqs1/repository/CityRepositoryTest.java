@@ -26,7 +26,7 @@ class CityRepositoryTest {
     private CityRepository cityRepository;
     @Test
     public void addCityandGetIt() throws Exception{
-        City aux = new City("AUX001","Coslada","ES",0.0f,0.0f,4.9f,"ES0001");
+        City aux = new City("AUX001","Coslada","ES",0.0f,0.0f,4.9f,"ES0001","Today");
         cityRepository.save(aux);
         mockMvc.perform(get("http://localhost:8080/api/cities").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$[0].name",is("Coslada")));

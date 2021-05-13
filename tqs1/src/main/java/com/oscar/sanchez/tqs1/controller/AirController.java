@@ -52,6 +52,9 @@ public class AirController {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode root = null;
             try {
+                if(result.getStatusCodeValue()==500){
+                    return "eror";
+                }
                 root = mapper.readTree(result.getBody());
                 System.out.println(root.path("results"));
                 //Create the city
@@ -59,10 +62,11 @@ public class AirController {
                 String location = root.path("results").get(0).path("location").asText();
                 String country = root.path("results").get(0).path("country").asText();
                 String name = root.path("results").get(0).path("city").asText();
+                String date = root.path("results").get(0).path("date").path("utc").asText();
                 float latitude = Float.parseFloat(root.path("results").get(0).path("coordinates").path("latitude").asText());
                 float longitude = Float.parseFloat(root.path("results").get(0).path("coordinates").path("longitude").asText());
                 float value = Float.parseFloat(root.path("results").get(0).path("value").asText());
-                City aux = new City(locationId, name, country, latitude, longitude, value, location);
+                City aux = new City(locationId, name, country, latitude, longitude, value, location,date);
                 System.out.println(aux);
                 this.cache.put(name,aux);
                 cityRepository.save(aux);
