@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -36,13 +35,25 @@ public class CityController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    @GetMapping("/city/{locationId}")
+    @GetMapping("/city/id/{locationId}")
     public ResponseEntity<City> getCityByLocationId(@PathVariable("locationId") String locationId){
         Optional<City> city = cityRepository.findById(locationId);
         if (city.isPresent()) {
             return new ResponseEntity<>(city.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    @GetMapping("/city/name/{name}")
+    public ResponseEntity<City> getCityByName(@PathVariable("name") String name){
+        try{
+            List<City> cities = cityRepository.findByName(name);
+            if (cities.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity(cities, HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
     @GetMapping("/country/{country}")
@@ -53,6 +64,19 @@ public class CityController {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
             return new ResponseEntity<>(cities, HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/city/random")
+    public ResponseEntity<City> getRandomCity(){
+        try{
+            List<City> cities = cityRepository.findAll(Sort.by(Sort.Direction.DESC,"date"));
+            List<City> distinct = cities.stream().distinct().collect(Collectors.toList());
+            Collections.shuffle(distinct);
+            Random rand = new Random();
+            City randomElement = distinct.get(rand.nextInt(distinct.size()));
+            return new ResponseEntity(randomElement, HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
