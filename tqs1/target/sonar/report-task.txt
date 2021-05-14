@@ -1,0 +1,6 @@
+projectKey=com.oscar.sanchez:tqs1
+serverUrl=http://localhost:7000
+serverVersion=8.8.0.42792
+dashboardUrl=http://localhost:7000/dashboard?id=com.oscar.sanchez%3Atqs1
+ceTaskId=AXlqtfCHI5lt0F7B4Ifp
+ceTaskUrl=http://localhost:7000/api/ce/task?id=AXlqtfCHI5lt0F7B4Ifp

@@ -47,12 +47,22 @@ public class TestSeleniumTest extends Object {
 
     @Test
     public void testSelenium() {
-        driver.get("http://localhost:8080/");
+        driver.get("http://tqs1.herokuapp.com/");
         driver.manage().window().setSize(new Dimension(550, 697));
         driver.findElement(By.linkText("Form")).click();
         driver.findElement(By.name("city")).click();
         driver.findElement(By.name("city")).sendKeys("Madrid");
         driver.findElement(By.cssSelector(".input-group-text")).click();
         assertThat(driver.findElement(By.id("cityName")).getText(), is("Madrid"));
+    }
+    @Test
+    public void testErrorPage() {
+        driver.get("http://tqs1.herokuapp.com/");
+        driver.manage().window().setSize(new Dimension(550, 697));
+        driver.findElement(By.linkText("Form")).click();
+        driver.findElement(By.name("city")).click();
+        driver.findElement(By.name("city")).sendKeys("Coslada");
+        driver.findElement(By.cssSelector(".input-group-text")).click();
+        assertThat(driver.getTitle(), is ("ERROR"));
     }
 }

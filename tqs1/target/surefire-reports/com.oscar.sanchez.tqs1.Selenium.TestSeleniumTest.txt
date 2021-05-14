@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.oscar.sanchez.tqs1.Selenium.TestSeleniumTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.037 s - in com.oscar.sanchez.tqs1.Selenium.TestSeleniumTest

@@ -1,5 +1,10 @@
+com\oscar\sanchez\tqs1\cache\IGenericCache.class
+com\oscar\sanchez\tqs1\cache\GenericCache$1.class
+com\oscar\sanchez\tqs1\cache\CacheConfig.class
+com\oscar\sanchez\tqs1\controller\AirController.class
+com\oscar\sanchez\tqs1\cache\GenericCache$CacheValue.class
 com\oscar\sanchez\tqs1\repository\CityRepository.class
 com\oscar\sanchez\tqs1\controller\CityController.class
 com\oscar\sanchez\tqs1\Tqs1Application.class
 com\oscar\sanchez\tqs1\classes\City.class
-com\oscar\sanchez\tqs1\controller\AirController.class
+com\oscar\sanchez\tqs1\cache\GenericCache.class

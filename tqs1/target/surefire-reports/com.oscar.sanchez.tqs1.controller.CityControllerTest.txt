@@ -1,18 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.oscar.sanchez.tqs1.controller.CityControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 7.251 s <<< FAILURE! - in com.oscar.sanchez.tqs1.controller.CityControllerTest
-testGetCitiesByCountry  Time elapsed: 0.673 s  <<< ERROR!
-java.lang.NoClassDefFoundError: io/restassured/path/json/mapper/factory/JsonbObjectMapperFactory
-	at com.oscar.sanchez.tqs1.controller.CityControllerTest.testGetCitiesByCountry(CityControllerTest.java:50)
-Caused by: java.lang.ClassNotFoundException: io.restassured.path.json.mapper.factory.JsonbObjectMapperFactory
-	at com.oscar.sanchez.tqs1.controller.CityControllerTest.testGetCitiesByCountry(CityControllerTest.java:50)
-
-testGetCities  Time elapsed: 0.368 s  <<< ERROR!
-java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.oscar.sanchez.tqs1.controller.CityControllerTest.testGetCities(CityControllerTest.java:43)
-
-testStatusRequest  Time elapsed: 0.35 s  <<< ERROR!
-java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.oscar.sanchez.tqs1.controller.CityControllerTest.testStatusRequest(CityControllerTest.java:37)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.825 s - in com.oscar.sanchez.tqs1.controller.CityControllerTest

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.oscar.sanchez.tqs1.cache.GenericCacheTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.195 s - in com.oscar.sanchez.tqs1.cache.GenericCacheTest

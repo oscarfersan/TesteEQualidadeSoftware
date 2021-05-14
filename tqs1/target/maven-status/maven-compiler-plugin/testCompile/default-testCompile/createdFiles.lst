@@ -1,2 +1,5 @@
 com\oscar\sanchez\tqs1\controller\CityControllerTest.class
+com\oscar\sanchez\tqs1\Selenium\TestSeleniumTest.class
 com\oscar\sanchez\tqs1\Tqs1ApplicationTests.class
+com\oscar\sanchez\tqs1\cache\GenericCacheTest.class
+com\oscar\sanchez\tqs1\repository\CityRepositoryTest.class

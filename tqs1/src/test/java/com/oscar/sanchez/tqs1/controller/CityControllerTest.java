@@ -33,8 +33,8 @@ class CityControllerTest {
     }
     @Test
     public void testGetCityByLocationId() throws Exception{
-        String locationId = "4338";
-        mockMvc.perform(get(uri+"/api/city/"+locationId).accept(MediaType.APPLICATION_JSON)).andDo(print())
+        String locationId = "4306";
+        mockMvc.perform(get(uri+"/api/city/id/"+locationId).accept(MediaType.APPLICATION_JSON)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.locationId",is(locationId)));
     }
@@ -45,7 +45,12 @@ class CityControllerTest {
         mockMvc.perform(get(uri+"/api/country/"+prefix).accept(MediaType.APPLICATION_JSON)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[*].locationId").isNotEmpty())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.[*].country",contains(prefix)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[*].country",hasItem(prefix)));
     }
-
+    @Test
+    public void testGetRandomCity() throws Exception{
+        mockMvc.perform(get(uri+"/city/random").accept(MediaType.APPLICATION_JSON)).andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[*]").isNotEmpty());
+    }
 }
