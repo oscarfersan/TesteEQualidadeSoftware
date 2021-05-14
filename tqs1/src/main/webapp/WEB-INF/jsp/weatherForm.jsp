@@ -22,6 +22,7 @@
             <input type="submit" class="input-group-text" value="Submit">
         </div>
     </form>
+    <h6>Provided by <a href="https://docs.openaq.org/">https://docs.openaq.org</a></h6>
 </div>
 </body>
 </html>

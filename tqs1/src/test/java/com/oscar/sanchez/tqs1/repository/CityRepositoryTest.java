@@ -30,5 +30,6 @@ class CityRepositoryTest {
         cityRepository.save(aux);
         mockMvc.perform(get("http://localhost:8080/api/cities").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$[0].name",is("Coslada")));
+        cityRepository.delete(aux);
     }
 }

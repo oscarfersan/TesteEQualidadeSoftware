@@ -13,8 +13,12 @@
         Home
     </title>
 </head>
-<body style="display:flex;align-content: center;justify-content: center;align-items: center;">
-<div>
+<body>
+<div style="margin-left: 39%;margin-right: auto;display: flex;">
+    <h1>YourWeathView</h1>
+</div>
+<div style="display:flex;align-content: center;justify-content: center;align-items: center;margin-top: 20px;">
+
     <a href="form" class="btn btn-primary">Form</a>
 </div>
 </body>
