@@ -14,8 +14,9 @@
     </title>
 </head>
 <body>
-<div style="margin-left: 39%;margin-right: auto;display: flex;">
+<div style="margin-right: auto;display: flex;flex-direction: column;align-items: center;">
     <h1>YourWeathView</h1>
+    <h4>Óscar Sánchez(101631)</h4>
 </div>
 <div style="display:flex;align-content: center;justify-content: center;align-items: center;margin-top: 20px;">
 
