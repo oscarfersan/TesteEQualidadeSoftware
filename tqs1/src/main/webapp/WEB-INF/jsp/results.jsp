@@ -17,6 +17,10 @@
         <h1 id="postion">${city.getLatitude()},${city.getLongitude()}</h1>
     </div>
 </div>
+<div style="display:flex;align-content: center;justify-content: center;align-items: center;margin-top: 20px;">
+
+    <a href="form" class="btn btn-primary">Form</a>
+</div>
 <h6>Provided by <a href="https://docs.openaq.org/">https://docs.openaq.org</a></h6>
 </body>
 </html>
